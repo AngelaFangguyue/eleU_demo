@@ -15,12 +15,12 @@ routes.push(
   {
     path: "/",
     name: "index11",
-    component: () => import(`@/components/BasicContainer.vue`),
+    component: () => import(/* webpackChunkName:"global" */ `@/components/BasicContainer.vue`),
   },
   {
     path: "*",
     name: "index11",
-    component: () => import(`@/components/NotFound.vue`),
+    component: () => import(/* webpackChunkName:"global" */ `@/components/NotFound.vue`),
   }
 );
 

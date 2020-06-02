@@ -1,5 +1,11 @@
 const path = require("path");
 
 module.exports = {
-  plugins: ["@babel/plugin-syntax-dynamic-import"],
+  use: [{
+    loader: 'babel-loader',
+    options: {
+      presets: [['es2015', {modules: false}]],
+      plugins: ['syntax-dynamic-import']
+    }
+  }]
 };
