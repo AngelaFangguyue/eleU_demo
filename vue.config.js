@@ -1,7 +1,8 @@
 // vue.config.js
 module.exports = {
   transpileDependencies: [/\bvue-awesome\b/],
-//   {
-//     "plugins": ["@babel/plugin-syntax-dynamic-import"]
-//   }
+  chainWebpack(config) {
+    config.plugins.delete('preload') 
+    config.plugins.delete('prefetch') 
+  }
 };

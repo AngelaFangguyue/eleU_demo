@@ -7,7 +7,7 @@ menus.forEach((item) => {
     routes.push({
       path: `/${sub.componentName}`,
       name: sub.componentName,
-      component: () => import(`@/components/${sub.componentName}`),
+      component: () => import(/* webpackChunkName:"global" */ `@/components/${sub.componentName}`),
     });
   });
 });
