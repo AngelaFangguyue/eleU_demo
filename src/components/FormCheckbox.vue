@@ -73,17 +73,15 @@
         <input type="file" />
       </label>
 
-    <el-form  :model="rform" ref="form1" :rules="rules">
-      <el-form-item label="姓名" prop="name">
-        <el-input v-model="rform.name" ></el-input>
-      </el-form-item>
-      <el-form-item label="密码" prop="pass">
-        <el-input v-model="rform.password" type="password"  autocomplete="off"></el-input>
-      </el-form-item>
-    <!-- <el-button @submit="submitForm('form1')">提交</el-button> -->
-
-    </el-form>
-
+      <el-form :model="rform" ref="form1" :rules="rules">
+        <el-form-item label="姓名" prop="name">
+          <el-input v-model="rform.name"></el-input>
+        </el-form-item>
+        <el-form-item label="密码" prop="pass">
+          <el-input v-model="rform.password" type="password" autocomplete="off"></el-input>
+        </el-form-item>
+        <!-- <el-button @submit="submitForm('form1')">提交</el-button> -->
+      </el-form>
     </div>
   </div>
 </template>
@@ -93,14 +91,13 @@ export default {
   name: "FormCheckbox",
   data: function() {
     return {
-
-      rform:{name:'',password:''},
+      rform: { name: "", password: "" },
       rules: {
-          name: [
-            { required: true, message: '请输入姓名', trigger: 'blur' },
-            { min: 3, max: 5, message: '长度在 3 到 5 个字符', trigger: 'blur' }
-          ]
-          },
+        name: [
+          { required: true, message: "请输入姓名", trigger: "blur" },
+          { min: 3, max: 5, message: "长度在 3 到 5 个字符", trigger: "blur" }
+        ]
+      },
       input: "",
       fgy: "fgygyf",
       restaurants: [
@@ -205,9 +202,7 @@ export default {
     };
   },
   methods: {
-    submitForm(formName){
-
-    },
+    submitForm() {},
     querySearch(queryString, callback) {
       var restaurants = this.restaurants;
       var results = queryString
@@ -262,10 +257,10 @@ export default {
       );
     },
     handleChange() {},
-    beforeRemove(file, fileList) {
+    beforeRemove(file) {
       return this.$confirm(`确定移除 ${file.name}？`);
     },
-    openEditDialog(data, index) {
+    openEditDialog(data) {
       this.editProjectInfo = JSON.parse(JSON.stringify(data));
       if (this.editProjectInfo.img) {
         this.ff = [

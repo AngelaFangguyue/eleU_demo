@@ -11,7 +11,10 @@ import "vue-awesome/icons/beer";
 import "vue-awesome/icons/camera";
 import "vue-awesome/icons/sun";
 import Icon from "vue-awesome/components/Icon";
+import axios from "axios";
+import VueAxios from 'vue-axios'
 
+Vue.use(VueAxios, axios)
 Vue.use(ElementUI);
 Vue.use(VueRouter);
 Vue.component("v-icon", Icon);
